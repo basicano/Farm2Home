@@ -94,6 +94,7 @@
 		}
 	}	
 	else{
+		// sets default values for several form input fields
 		$_POST['user_name']="";
 		$_POST['mobile_num']="";
 		$_POST['email']="";
@@ -102,12 +103,14 @@
 	}	
 ?>
 
+<!--  -->
 <table width=95% align="center">
 	<tr>
 		<td><font size="4"><b>Fruits & Vegitable Shop</b></font></td>
 		<!-- <td align="center"></td> -->
 	</tr>
 	<tr> 
+		<!-- a login/register header based on the value of the 'registered' parameter -->
 		<td> <font size= "5" align="center"><?php if (empty($_POST['registered'])) echo "LOGIN"; else echo "REGISTER" ?></font></td>			 
 	</tr>
 	<tr>
@@ -120,6 +123,7 @@ if( !empty($_REQUEST['id']) && empty($_REQUEST['action'])){
 	?>
 	<table width=95% align="center" cellpadding="3">
 	 	<tr>
+<!-- 			Login form -->
 	 		<td><form action="login_register.php" method="post">
 					<p>Email</p>
 					<input type = "text" name= "login_email" placeholder="Enter your email id" value="<?php if (!empty($_REQUEST['login']))echo $_REQUEST['login_email']; ?>" required><br><br>
